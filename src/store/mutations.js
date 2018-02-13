@@ -5,3 +5,4 @@ export const mutations = {
 		state.notes.push(...payload)
 	}
 }
+
