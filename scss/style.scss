@@ -1,7 +1,10 @@
-@import "general";
 @import "mixins";
-@import "grid";
+@import "general";
+@import "variables";
+@import "typography";
 
+@import "grid";
+@import "topbar";
 @import "note";
 @import "modal";
 @import "buttons";

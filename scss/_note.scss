@@ -1,8 +1,13 @@
 .note {
-	height: 15rem;
+	height: 14rem;
 	box-shadow: 0 0 8px 10px rgba(242,242,242,0.3);
 	padding: 1rem;
-	margin: 1rem;
+	margin: 1rem .5rem;
 	border-radius: 3px;
 	background: #fff;
+}
+
+
+.note-desc {
+	color: $color-gray;
 }
