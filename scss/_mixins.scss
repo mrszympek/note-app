@@ -134,3 +134,15 @@ $mq-breakpoints: (
 	text-overflow: ellipsis;
 	white-space: nowrap;
 }
+
+//
+// Button colors
+//
+
+@mixin btn-color($color) {
+	color: $color;
+
+	&:hover {
+		color: darken($color, 10);
+	}
+}

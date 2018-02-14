@@ -1,0 +1,24 @@
+.btn {
+	color: #fff;
+	display: block;
+	cursor: pointer;
+	transition: .3s color;
+}
+
+.btn-add {
+	@include btn-color(#8981d8);
+	line-height: px2rem(26px);
+
+	&:before {
+		font-size: 1.1rem;
+		margin-right: .5rem;
+		float: left;
+		display: block;
+		content: '+';
+		height: 1.5rem;
+		width: 1.5rem;
+		border: 1px solid #8981d8;
+		border-radius: 50%;
+		text-align: center;
+	}
+}
