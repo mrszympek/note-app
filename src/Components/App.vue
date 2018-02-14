@@ -2,18 +2,17 @@
 	<div id="app">
 		<div class="wrap">
 			<notes></notes>
-			<addButton/>
 
-			<modal v-if="showModal" @close="showModal = false"></modal>
-			<button id="show-modal" @click="showModal = true">New Post</button>
-
-			{{ showModal }}
+			<modal v-show="showModal" @close="showModal = false">
+				<h3 slot="header">Inny header</h3>
+			</modal>
+			<a class="btn btn-add" @click="showModal = true">Add new note</a>
 		</div>
 	</div>
 </template>
 <script>
 	import notes from './Notes.vue'
-	import addButton from './AddButton.vue'
+	import modal from './Modal.vue'
 
 	export default {
 		data() {
@@ -24,7 +23,7 @@
 
 		components: {
 			notes,
-			addButton
+			modal
 		}
 	}
 </script>
