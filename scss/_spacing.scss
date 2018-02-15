@@ -1,0 +1,18 @@
+$spacers: (
+		'0': 0,
+		'xs': .5rem,
+		's': 1rem,
+		'm': 2rem,
+		'l': 4rem
+);
+
+@each $pos in (top right bottom left) {
+	@each $name, $size in $spacers {
+		.m#{str-slice($pos, 0, 1)}-#{$name} {
+			margin-#{$pos}: $size !important;
+		}
+		.p#{str-slice($pos, 0, 1)}-#{$name} {
+			padding-#{$pos}: $size !important;
+		}
+	}
+}
