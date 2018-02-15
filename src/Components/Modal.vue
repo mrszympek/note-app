@@ -9,6 +9,9 @@
 					<div class="modal-body">
 						<input type="text" placeholder="Note title" v-model="note.title">
 						<textarea name="" id="" cols="30" rows="10" v-model="note.description"></textarea>
+						<select v-model="note.category">
+							<option v-for="category in categories" :value="category.value">{{category.name}}</option>
+						</select>
 					</div>
 					<div class="modal-footer">
 						<button @click="$emit('close')">Close</button>
@@ -20,18 +23,35 @@
 	</div>
 </template>
 <script>
+	import * as category from '../enums/category'
+
 	export default {
 		data() {
 			return {
 				note: {
 					date: '',
 					title: '',
-					description: ''
-				}
+					description: '',
+					category: ''
+				},
+				categories: [
+					{
+						value: category.PROJECTS,
+						name: 'Projects',
+					},
+					{
+						value: category.BUISNESS,
+						name: 'Buisness',
+					},
+					{
+						value: category.PERSONAL,
+						name: 'Personal',
+					}
+				]
 			}
 		},
 		methods: {
-			addNote(){
+			addNote() {
 				this.$store.dispatch('addNote', this.note);
 
 				this.note = {

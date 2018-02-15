@@ -7,6 +7,7 @@
             <div class="note-body">
                 <h3>{{ note.title }}</h3>
                 <p class="note-desc">{{ note.description }}</p>
+                <p>{{ note.category }}</p>
                 <button @click="onRemove(note)">X</button>
             </div>
         </div>
