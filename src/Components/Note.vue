@@ -7,13 +7,20 @@
             <div class="note-body">
                 <h3>{{ note.title }}</h3>
                 <p class="note-desc">{{ note.description }}</p>
+                <button @click="onRemove(note)">X</button>
             </div>
         </div>
     </div>
 </template>
 
 <script>
+	import {mapActions} from 'vuex'
+
     export default {
-        props: ['note']
+        props: ['note'],
+
+        methods: mapActions([
+        	'onRemove'
+        ])
     }
 </script>

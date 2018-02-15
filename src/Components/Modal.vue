@@ -12,7 +12,7 @@
 					</div>
 					<div class="modal-footer">
 						<button @click="$emit('close')">Close</button>
-						<button @click="addNote(note); $emit('close')">Add</button>
+						<button @click="addNote(); $emit('close')">Add</button>
 					</div>
 				</div>
 			</div>
@@ -20,8 +20,6 @@
 	</div>
 </template>
 <script>
-	import {mapActions} from 'vuex'
-
 	export default {
 		data() {
 			return {
@@ -32,9 +30,17 @@
 				}
 			}
 		},
-		methods: mapActions([
-			'addNote'
-		])
+		methods: {
+			addNote(){
+				this.$store.dispatch('addNote', this.note);
+
+				this.note = {
+					date: '',
+					title: '',
+					description: ''
+				};
+			}
+		}
 	}
 </script>
 

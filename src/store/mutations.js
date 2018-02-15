@@ -2,11 +2,9 @@ import * as types from './mutations-types'
 
 export const mutations = {
 	[types.ADD_NOTE](state, payload) {
-		const newNote = {
-			title: payload.title,
-			description: payload.description
-		}
-
-		state.notes.push(newNote);
-	}
+		state.notes.push(payload);
+	},
+	[types.REMOVE_NOTE](state, payload) {
+		state.notes = state.notes.filter(note => note !== payload);
+	},
 }
