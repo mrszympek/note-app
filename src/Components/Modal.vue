@@ -40,8 +40,8 @@
 						name: 'Projects',
 					},
 					{
-						value: category.BUISNESS,
-						name: 'Buisness',
+						value: category.BUSINESS,
+						name: 'Business',
 					},
 					{
 						value: category.PERSONAL,

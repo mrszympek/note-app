@@ -1,3 +1,3 @@
 export const PROJECTS = "PROJECTS"
-export const BUISNESS = "BUISNESS"
+export const BUSINESS = "BUSINESS"
 export const PERSONAL = "PERSONAL"
