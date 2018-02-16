@@ -9,7 +9,7 @@
 					<div class="modal-body">
 						<input type="text" placeholder="Note title" v-model="note.title">
 						<textarea name="" id="" cols="30" rows="10" v-model="note.description"></textarea>
-						<select v-model="note.category">
+						<select>
 							<option v-for="category in categories" :value="category.value">{{category.name}}</option>
 						</select>
 					</div>
@@ -38,6 +38,7 @@
 					{
 						value: category.PROJECTS,
 						name: 'Projects',
+
 					},
 					{
 						value: category.BUSINESS,
