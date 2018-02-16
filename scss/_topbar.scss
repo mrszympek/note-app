@@ -14,13 +14,13 @@
 		border-radius: 3px;
 
 		&:hover, &:active {
-			background: $color-violet;
+			background: $color-orange;
 			color: #fff;
 		}
 	}
 
 	._active {
-		background: $color-violet;
+		background: $color-orange;
 		color: #fff;
 	}
 }

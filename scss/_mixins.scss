@@ -140,6 +140,14 @@ $mq-breakpoints: (
 //
 
 @mixin btn-color($color) {
+	background: $color;
+
+	&:hover {
+		background: darken($color, 10);
+	}
+}
+
+@mixin btn-text($color) {
 	color: $color;
 
 	&:hover {

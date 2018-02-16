@@ -1,14 +1,23 @@
 .btn {
-	color: #fff;
+	padding: .5rem 0;
+	border-radius: 3px;
 	display: block;
 	cursor: pointer;
-	transition: .3s color;
+	transition: .3s all;
+
+	:not(a) {
+		color: #fff;
+		@include btn-color(#2474a6);
+	}
 }
 
 .btn-add {
-	@include btn-color($color-violet);
 	line-height: px2rem(26px);
-	font-weight: 700;
+
+	:not(a) {
+		font-weight: 700;
+		@include btn-color($color-orange);
+	}
 
 	&:before {
 		font-size: 1.1rem;
@@ -18,8 +27,20 @@
 		content: '+';
 		height: 1.5rem;
 		width: 1.5rem;
-		border: 1px solid $color-violet;
+		border: 1px solid $color-orange;
 		border-radius: 50%;
 		text-align: center;
 	}
+}
+
+.btn-danger {
+	@include btn-color(#e00b27);
+}
+
+.btn-text-red {
+	@include btn-text(#e00b27)
+}
+
+.btn-text-green {
+	@include btn-text(#1ad221)
 }

@@ -27,12 +27,43 @@
 }
 
 .modal-header h3 {
+	text-align: center;
 	margin-top: 0;
 	color: #42b983;
 }
 
 .modal-body {
 	margin: 20px 0;
+}
+
+.modal-input {
+	text-align: center;
+	border: 0;
+	padding-bottom: .2rem;
+	font-size: 1.5rem;
+	margin-bottom: 1rem;
+}
+
+.modal-textarea {
+	border: 0;
+	resize: none;
+}
+
+.modal-select {
+	width: 100%;
+	height: 2rem;
+	font-size: 1rem;
+	border: 0;
+}
+
+.modal-category {
+	display: flex;
+	align-items: center;
+}
+
+.modal-footer {
+	display: flex;
+	justify-content: space-between;
 }
 
 .modal-default-button {
