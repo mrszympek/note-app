@@ -4,7 +4,6 @@
             <div class="modal-wrapper">
                 <div class="modal-container">
                     <div class="modal-header">
-                        <!--<a v-model="note.date">{{jsMoment}}</a>-->
                         <input class="modal-input" type="text" placeholder="Note Title" v-model="note.title">
                     </div>
                     <div class="modal-body">
@@ -66,9 +65,10 @@
                 this.$store.dispatch('addNote', this.note);
 
                 this.note = {
-                    date: '',
+                    date: moment(new Date()).format("D MMM YYYY"),
                     title: '',
-                    description: ''
+                    description: '',
+                    category: category.PROJECTS
                 };
             },
         },
