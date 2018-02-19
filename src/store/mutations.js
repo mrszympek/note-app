@@ -2,6 +2,8 @@ import * as types from './mutations-types'
 
 export const mutations = {
 	[types.ADD_NOTE](state, payload) {
+		payload.date = Date.now();
+
 		state.notes.push(payload);
 	},
 

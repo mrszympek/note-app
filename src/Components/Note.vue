@@ -2,8 +2,8 @@
     <div class="col-xs-8 col-sm-4 col-md-3">
         <div class="note">
             <div class="note-header">
-                <p>{{ note.date }}</p>
-                <p class="note-category">{{ note.category }}</p>
+                <p>{{ getDate(note.date) }}</p>
+                <p class="note-category" :class="getCategoryCls(note.category)">{{ note.category }}</p>
             </div>
             <div class="note-body">
                 <h3 class="note-title">{{ note.title }}</h3>
@@ -18,12 +18,22 @@
 
 <script>
     import {mapActions} from 'vuex'
+    import moment from 'moment'
+    import * as categoryHelper from '../helpers/category'
 
     export default {
         props: ['note'],
 
-        methods: mapActions([
-            'onRemove'
-        ])
+        methods: {
+        	getDate(date) {
+                return moment(date).format("D MMM YYYY");
+            },
+	        getCategoryCls(categoryType) {
+		        return categoryHelper.getCategoryCls(categoryType);
+	        },
+            ...mapActions([
+		        'onRemove'
+	        ])
+        }
     }
 </script>

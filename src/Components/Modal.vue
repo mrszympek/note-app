@@ -14,7 +14,7 @@
                         <div class="modal-category">
                             <span class="mr-s">Category:</span>
                             <select class="modal-select" v-model="note.category">
-                                <option v-for="category in categories" :value="category.value">{{category.name}}
+                                <option v-for="category in categories" :value="category.type">{{category.name}}
                                 </option>
                             </select>
                         </div>
@@ -29,34 +29,20 @@
     </div>
 </template>
 <script>
-    import * as category from '../enums/category'
-    import moment from 'moment'
+    import * as categoryTypes from '../enums/category'
+    import * as categoryHelper from '../helpers/category'
+
+    const INITIAL_NOTE = {
+	    title: '',
+	    description: '',
+	    category: categoryTypes.PROJECTS
+    }
 
     export default {
         data() {
             return {
-                note: {
-                    date: moment(new Date()).format("D MMM YYYY"),
-                    title: '',
-                    description: '',
-                    category: category.PROJECTS
-                },
-                categories: [
-                    {
-                        value: category.PROJECTS,
-                        name: 'Projects',
-                        selected: true
-
-                    },
-                    {
-                        value: category.BUSINESS,
-                        name: 'Business',
-                    },
-                    {
-                        value: category.PERSONAL,
-                        name: 'Personal',
-                    }
-                ],
+                note: { ...INITIAL_NOTE },
+                categories: categoryHelper.getCategories(),
             }
         },
 
@@ -64,12 +50,7 @@
             addNote() {
                 this.$store.dispatch('addNote', this.note);
 
-                this.note = {
-                    date: moment(new Date()).format("D MMM YYYY"),
-                    title: '',
-                    description: '',
-                    category: category.PROJECTS
-                };
+                this.note = { ...INITIAL_NOTE };
             },
         },
     }
