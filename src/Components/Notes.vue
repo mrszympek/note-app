@@ -1,6 +1,6 @@
 <template>
 	<div class="notes">
-		<div class="row center-xs">
+		<div class="row center-xs start-md">
 			<note v-for="(note, index) in sortByCategory" :note="note" :key="index"/>
 		</div>
 	</div>
